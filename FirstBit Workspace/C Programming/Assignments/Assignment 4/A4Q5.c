@@ -21,23 +21,23 @@ void main(){
 		}
 	}
 	else if(c==2){
-		int IsPrime=1;
-		for(int i=2;i<=num/2;i++){
-			if(num%i==0){
-				IsPrime=0;
-				break;
+		int IsPrime = 1;
+			
+			if(num <= 1) {
+			    IsPrime = 0;
+			} else {
+			    for(int i = 2; i <= num/2; i++){
+			        if(num % i == 0){
+			            IsPrime = 0;
+			            break;
+			        }
+			    }
 			}
-		}
-	
-	if(num <= 1){
-		printf("%d Is not a prime number",num);
-	}
-	else if(IsPrime==1){
-    	printf("%d Is a prime number",num);
-	}
-	else{
-		printf("%d Is not a prime number",num);
-	}	
+			
+			if(IsPrime)
+			    printf("%d is a prime number", num);
+			else
+			    printf("%d is not a prime number", num);
 	}
 	else if(c==3){
 		if(num>=0){
