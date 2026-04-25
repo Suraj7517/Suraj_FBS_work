@@ -1,0 +1,14 @@
+/*1 Print numbers from 1 to 10
+Output: 1 2 3 4 5 6 7 8 9 10*/
+void nums(int);
+void main(){
+	int end=10;
+	nums(end);
+}
+void nums(end){
+	int a=1;
+	while(a<=end){
+		printf("%d ",a);
+		a++;
+	}
+}
