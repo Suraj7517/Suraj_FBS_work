@@ -1,0 +1,13 @@
+//3. Write a program to check whether a given year is a leap year.
+void isleap();
+void main(){
+	isLeap();	
+}
+void isLeap(){
+	int year=2003;
+	if(year%4==0&&year%100!=0||year%400==0){
+		printf("%d is a leap year",year);
+	}
+	else
+	printf("%d is not a leap year",year);
+}
