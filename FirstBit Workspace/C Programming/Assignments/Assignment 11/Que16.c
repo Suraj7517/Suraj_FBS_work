@@ -1,0 +1,33 @@
+//mystrncasecmp
+
+int mystrncasecmp(char str1[], char str2[], int n)
+{
+	int i = 0;
+
+	while(i < n && str1[i] != '\0' && str2[i] != '\0')
+	{
+		char ch1 = str1[i];
+		char ch2 = str2[i];
+
+		if(ch1 >= 'A' && ch1 <= 'Z')
+			ch1 = ch1 + 32;
+
+		if(ch2 >= 'A' && ch2 <= 'Z')
+			ch2 = ch2 + 32;
+
+		if(ch1 != ch2)
+			return ch1 - ch2;
+
+		i++;
+	}
+
+	if(i == n)
+		return 0;
+
+	return str1[i] - str2[i];
+}
+
+void main()
+{
+	printf("%d\n", mystrncasecmp("HelloWorld", "helloJava", 5));
+}
