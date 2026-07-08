@@ -1,0 +1,76 @@
+MySQL Assignment – 3
+
+Q1)Write an SQL query to insert the above employee records into the EMPLOYEES table.
+
+INSERT INTO EMPLOYEES
+VALUES(100,'Steven','King',1,24000,200,10),
+(101,'Neena','Kochhar',2,17000,200,10),
+(102,'Lex','De Haan',2,17000,200,10),
+(103,'Alexander','Hunold',3,9000,103,60),
+(105,'David','Austin',3,4800,103,60),
+(106,'Valli','Pataballa',3,4800,103,60),
+(107,'Diana','Lorentz',3,4200,114,30),
+(108,'Nancy','Greenberg',4,12000,145,80),
+(109,'Daniel','Faviet',4,9000,145,80);
+
+Q2)Write a single SQL INSERT statement to insert at least 3 department records into the
+DEPARTMENTS table.
+
+INSERT INTO DEPARTMENTS
+VALUES(10,'Administration',200,1700),
+(20,'Marketing',201,1800),
+(30,'Purchasing',114,1700);
+
+Q3) Write an SQL query to insert one new job record into the JOBS table ensuring duplicate
+JOB_ID is not allowed.
+
+INSERT INTO JOBS VALUES(5,'Developer',25000,200000);
+
+Q4) Write an SQL query to increment the salary of each employee by 10%.
+
+UPDATE EMPLOYEES SET SALARY=SALARY*1.10;
+
+Q5) Write an SQL query to set EMAIL = 'not available' for employees whose department_id is
+80 and commission_pct is less than 0.20.
+
+UPDATE EMPLOYEES SET EMAIL='not available' WHERE Department_id=80 AND commission_pct<0.20;
+
+Q6) Write an SQL query to set EMAIL = 'not available' for employees who belong to the
+'Purchasing' department.
+
+UPDATE EMPLOYEES SET EMAIL='not available' WHERE DEPARTMENT_ID=(SELECT DEPARTMENT_ID FROM DEPARTMENTS WHERE Department_name='Purchasing');
+
+Q7) Write an SQL query to update EMAIL = 'not available' and COMMISSION_PCT = 0.10 for
+all employees.
+
+UPDATE EMPLOYEES SET EMAIL='not available',COMMISSION_PCT=0.10;
+
+Q8) Write an SQL query to increase salary by 2000 for employees working in department_id =
+60.
+
+UPDATE EMPLOYEES SET SALARY=SALARY+2000 WHERE DEPARTMENT_ID=60;
+
+Q9) Write an SQL query to delete employees whose salary is less than 5000.
+
+DELETE FROM EMPLOYEES WHERE SALARY<5000;
+
+Q10) Write an SQL query to insert one new employee record with your own suitable details (use
+a new employee_id).
+
+INSERT INTO EMPLOYEES VALUES(111,'JOHN','CENA',2,35000,114,60);
+
+Q11) Write an SQL query to change manager_id to 300 for all employees in department_id = 80.
+
+UPDATE EMPLOYEES SET manager_id=300 where department_id=80;
+
+Q12) Write an SQL query to delete the department record where department_id = 20 and observe
+the error if employees exist in that department.
+
+DELETE FROM DEPARTMENTS WHERE department_id = 20;
+
+ERROR 1451 (23000): Cannot delete or update a parent row:
+a foreign key constraint fails
+
+
+
+
